@@ -1,11 +1,9 @@
-import pandas as pd
 import numpy as np
+from scipy.stats import anderson_ksamp
 
+chat_id = 632165934  # Ваш chat ID, не меняйте название переменной
+CONST = 0.02
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    return anderson_ksamp([x, y]).significance_level < CONST
